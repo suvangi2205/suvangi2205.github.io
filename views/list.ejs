@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Chango&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div class="heading">
+    <h1 ><%= days %></h1>
+  </div>
+    <div id="lists">
+
+
+      <% for (var i=0;i<newItems.length;i++){ %>
+        <div class="item">
+        <input type="checkbox">
+        <p><%= newItems[i] %> </p>
+        </div>
+      <% } %>
+
+
+  </div>
+    <form class="item" id="testForm" action="/" method="post" autocomplete="new-password">
+      <input type="password" style="display:none;" readonly>
+        <input type="search" name="item" id="search" value="item"  placeholder="Add task" autocomplete="new-password" class="iteminput" onfocus="this.removeattribute('readonly');"/ >
+      <button type="submit" name="button" class="buttonstyle">+</button>
+    </form>
+    <script src="/demo/disableautofill.js"></script>
+<script>
+    var daf = new disableautofill({
+        'form': '#testForm',
+        'fields': ['.iteminput'],
+        'debug': true
+    });
+    daf.init();
+</script>
+
+
+
+
+  </body>
+</html>
