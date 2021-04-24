@@ -19,18 +19,21 @@
 
 
       <% for (var i=0;i<newItems.length;i++){ %>
+        <form action="/delete" method="post">
         <div class="item">
-        <input type="checkbox">
-        <p><%= newItems[i] %> </p>
+        <input type="checkbox" name="checkbox" value="<%=newItems[i]._id%>" onChange="this.form.submit()">
+        <p><%= newItems[i].name %> </p>
         </div>
+        <input type="hidden" name="listName" value="<%= days%>"></input>
+      </form>
       <% } %>
 
 
   </div>
     <form class="item" id="testForm" action="/" method="post" autocomplete="new-password">
       <input type="password" style="display:none;" readonly>
-        <input type="search" name="item" id="search" value="item"  placeholder="Add task" autocomplete="new-password" class="iteminput" onfocus="this.removeattribute('readonly');"/ >
-      <button type="submit" name="button" class="buttonstyle">+</button>
+        <input type="search" name="item" id="search"   placeholder="Add task" autocomplete="new-password" class="iteminput" onfocus="this.removeattribute('readonly');"/ >
+      <button type="submit"  class="buttonstyle" name="list" value="<%= days %>">+</button>
     </form>
     <script src="/demo/disableautofill.js"></script>
 <script>
