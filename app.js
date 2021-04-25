@@ -21,7 +21,7 @@ const a= new Item({
 });
 
 const b= new Item({
-  name: "Hit the + button to add a </br> new button."
+  name: "Hit the + button to add a new button."
 });
 
 const c= new Item({
